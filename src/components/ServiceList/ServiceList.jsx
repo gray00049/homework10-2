@@ -8,7 +8,7 @@ export default function ServiceList() {
   const dispatch = useDispatch();
 
   const handleRemoveItem = (id) => {
-    if (changed) {
+    if (changed == id) {
       if (confirm('Удаление записи во время редактирования приведет к потере данных. Продолжить?')) {
         dispatch(changeServiceId());
         dispatch(removeService(changed));
