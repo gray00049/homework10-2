@@ -12,10 +12,16 @@ export default function TwoButtons({ onChange }) {
   return (
     <>
       <div className="col-2">
-        <button className="btn btn-outline-success w-100" onClick={onChange}>Save</button>
+        <button 
+          className="btn btn-outline-success w-100" 
+          onClick={onChange}
+        >Save</button>
       </div>
       <div className="col-2">
-        <button className="btn btn-danger w-100" onClick={handleCancel}>Cancel</button>
+        <button 
+          className="btn btn-danger w-100" 
+          onClick={handleCancel}
+        >Cancel</button>
       </div>
     </>
   )

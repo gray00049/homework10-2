@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeService, changeServiceId } from "../actions/actionCreators";
+import { removeService, changeServiceId } from "../../actions/actionCreators";
 import ServiceItem from "./ServiceItem";
 
 export default function ServiceList() {
@@ -9,7 +9,10 @@ export default function ServiceList() {
 
   const handleRemoveItem = (id) => {
     if (changed) {
-      alert('Перед удалением закончите редактирование записи');
+      if (confirm('Удаление записи во время редактирования приведет к потере данных. Продолжить?')) {
+        dispatch(changeServiceId());
+        dispatch(removeService(changed));
+      }
     } else {
       dispatch(removeService(id));
     }

@@ -14,7 +14,6 @@ export default function Form() {
 
   const handleChangeValue = evt => {
     const input = evt.target;
-
     if (input.id == 'nameService') {
       changeNameField(input.value);
     } else {

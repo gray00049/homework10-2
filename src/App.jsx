@@ -1,5 +1,5 @@
 import Form from './components/Form/Form';
-import ServiceList from './components/ServiceList';
+import ServiceList from './components/ServiceList/ServiceList';
 import './App.css';
 
 function App() {

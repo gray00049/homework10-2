@@ -9,8 +9,16 @@ export default function ServiceItem({ service, onDelete, onChange }) {
           {service.price}
         </span>
         <div>
-          <button type="button" className="btn btn-link link-success" onClick={onChange}>Edit</button>
-          <button type="button" className="btn btn-link link-danger" onClick={onDelete}>Delete</button>
+          <button 
+            type="button" 
+            className="btn btn-link link-success" 
+            onClick={onChange}
+          >Edit</button>
+          <button 
+            type="button" 
+            className="btn btn-link link-danger" 
+            onClick={onDelete}
+          >Delete</button>
         </div>
       </div>
     </li>
