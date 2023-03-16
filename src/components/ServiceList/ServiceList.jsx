@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeService, changeServiceId } from "../../actions/actionCreators";
 import ServiceItem from "./ServiceItem";
@@ -5,6 +6,7 @@ import ServiceItem from "./ServiceItem";
 export default function ServiceList() {
   const services = useSelector(state => state.serviceList);
   const changed = useSelector(state => state.changeServiceId);
+  const filterQuery = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
   const handleRemoveItem = (id) => {
@@ -24,7 +26,7 @@ export default function ServiceList() {
 
   return (
     <ul className="list-group">
-      {services.map(item => (
+      {services.filter(item => item.name.toLowerCase().includes(filterQuery.toLowerCase())).map(item => (
         <ServiceItem 
           key={item.id} 
           service={item}

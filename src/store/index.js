@@ -1,11 +1,12 @@
 import { legacy_createStore, combineReducers, compose } from 'redux';
 import serviceListReducer from '../reducers/serviceListReducer';
-import changeServiceReducer from '../reducers/changeServiceReducer';
 import changeServiceIdReducer from '../reducers/changeServiceIdReducer';
+import filterReducer from '../reducers/filterReducer';
 
 const reduser = combineReducers({
   serviceList: serviceListReducer,
-  changeServiceId: changeServiceIdReducer
+  changeServiceId: changeServiceIdReducer,
+  filter: filterReducer
 })
 
 const store = legacy_createStore(
